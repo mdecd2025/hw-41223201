@@ -142,9 +142,36 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">Tasks5 << <a href='Tasks5.html'>Previous</a> <a href='Homework.html'>Next</a> >> Homework<br /><h1>Tasks6</h1>
-<p><span>Webots Tutorial 4 ~6(HW3)</span></p>
-<br />Tasks5 << <a href='Tasks5.html'>Previous</a> <a href='Homework.html'>Next</a> >> Homework</div>
+    <div id="tipue_search_content">About << <a href='About.html'>Previous</a> <a href='repo.html'>Next</a> >> repo<br /><h1>list</h1>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from browser import html, document
+
+# 讀取學員資料的 URL
+url = "https://mde.tw/list/2b.txt"
+
+# 讀取資料並將每行資料存儲到數列中
+data = open(url).readlines()
+
+# 因為資料的第一行是標題，所以有效資料從索引 1 開始
+all_stud = data[1:]
+
+# 查詢有多少學員資料
+print("總共有 " + str(len(all_stud)) + "名學員")
+
+# 取得網頁中 ID 為 "brython_div1" 的位置，這樣可以將資料插入到該位置
+brython_div1 = document["brython_div1"]
+
+# 使用 for 迴圈遍歷所有學員資料，將每個學員的資料顯示為超鏈接
+for idx, student in enumerate(all_stud, start=1):
+    # 假設每行資料是學員的某個識別信息，例如學號或帳號，並且以學號為鏈接名稱
+    student_info = student.strip()  # 去除多餘的空格與換行符
+
+    # 顯示學員的資料作為超鏈接
+    brython_div1 &lt;= f"{idx}. " + html.A(student_info, href=f"https://example.com/{student_info}")
+
+    # 在每個超鏈接後插入換行符
+    brython_div1 &lt;= html.BR()
+</pre>
+<p><span>1. </span><a href="https://example.com/40923137a40923137">40923137 a40923137</a><br/><span>2. </span><a href="https://example.com/4102311441023114">41023114 41023114</a><br/><span>3. </span><a href="https://example.com/41023205c-ching">41023205 c-ching</a><br/><span>4. </span><a href="https://example.com/41023206tseYU000">41023206 tseYU000</a><br/><span>5. </span><a href="https://example.com/41023210junpig10">41023210 junpig10</a><br/><span>6. </span><a href="https://example.com/4102321341023213">41023213 41023213</a><br/><span>7. </span><a href="https://example.com/4102321541023215">41023215 41023215</a><br/><span>8. </span><a href="https://example.com/4102321641023216">41023216 41023216</a><br/><span>9. </span><a href="https://example.com/41023218snowfall-killer">41023218 snowfall-killer</a><br/><span>10. </span><a href="https://example.com/41023232YUN4">41023232 YUN4</a><br/><span>11. </span><a href="https://example.com/41023237">41023237</a><br/><span>12. </span><a href="https://example.com/4107120241071202">41071202 41071202</a><br/><span>13. </span><a href="https://example.com/4107120341071203">41071203 41071203</a><br/><span>14. </span><a href="https://example.com/4107120441071204">41071204 41071204</a><br/><span>15. </span><a href="https://example.com/4122320141223201">41223201 41223201</a><br/><span>16. </span><a href="https://example.com/4122320241223202">41223202 41223202</a><br/><span>17. </span><a href="https://example.com/4122320341223203">41223203 41223203</a><br/><span>18. </span><a href="https://example.com/4122320541223205">41223205 41223205</a><br/><span>19. </span><a href="https://example.com/4122320641223206">41223206 41223206</a><br/><span>20. </span><a href="https://example.com/41223207emma0312">41223207 emma0312</a><br/><span>21. </span><a href="https://example.com/4122320841223208-hw">41223208 41223208-hw</a><br/><span>22. </span><a href="https://example.com/4122320941223209">41223209 41223209</a><br/><span>23. </span><a href="https://example.com/41223210">41223210</a><br/><span>24. </span><a href="https://example.com/4122321141223211">41223211 41223211</a><br/><span>25. </span><a href="https://example.com/41223212jjjay41223212">41223212 jjjay41223212</a><br/><span>26. </span><a href="https://example.com/41223214">41223214</a><br/><span>27. </span><a href="https://example.com/41223215RAY41223215">41223215 RAY41223215</a><br/><span>28. </span><a href="https://example.com/4122321641223216">41223216 41223216</a><br/><span>29. </span><a href="https://example.com/4122321741223217">41223217 41223217</a><br/><span>30. </span><a href="https://example.com/4122321841223218">41223218 41223218</a><br/><span>31. </span><a href="https://example.com/4122321941223219">41223219 41223219</a><br/><span>32. </span><a href="https://example.com/41223220ljg41223220">41223220 ljg41223220</a><br/><span>33. </span><a href="https://example.com/41223221leeshaowei0716">41223221 leeshaowei0716</a><br/><span>34. </span><a href="https://example.com/4122322241223222">41223222 41223222</a><br/><span>35. </span><a href="https://example.com/4122322341223223">41223223 41223223</a><br/><span>36. </span><a href="https://example.com/4122322441223224">41223224 41223224</a><br/><span>37. </span><a href="https://example.com/4122322541223225">41223225 41223225</a><br/><span>38. </span><a href="https://example.com/4122322641223226-0">41223226 41223226-0</a><br/><span>39. </span><a href="https://example.com/4122322741223227">41223227 41223227</a><br/><span>40. </span><a href="https://example.com/41223228hyy41223228">41223228 hyy41223228</a><br/><span>41. </span><a href="https://example.com/4122322941223229">41223229 41223229</a><br/><span>42. </span><a href="https://example.com/4122323041223230">41223230 41223230</a><br/><span>43. </span><a href="https://example.com/4122323141223231">41223231 41223231</a><br/><span>44. </span><a href="https://example.com/4122323241223232">41223232 41223232</a><br/><span>45. </span><a href="https://example.com/4122323341223233even">41223233 41223233even</a><br/><span>46. </span><a href="https://example.com/4122323441223234">41223234 41223234</a><br/><span>47. </span><a href="https://example.com/4122323541223235">41223235 41223235</a><br/><span>48. </span><a href="https://example.com/4122323641223236">41223236 41223236</a><br/><span>49. </span><a href="https://example.com/41223237Cloud41223237">41223237 Cloud41223237</a><br/><span>50. </span><a href="https://example.com/41223239WeihHuang">41223239 WeihHuang</a><br/><span>51. </span><a href="https://example.com/41223240ych0227">41223240 ych0227</a><br/><span>52. </span><a href="https://example.com/4122324241223242">41223242 41223242</a><br/><span>53. </span><a href="https://example.com/4122324341223243">41223243 41223243</a><br/><span>54. </span><a href="https://example.com/41223244Liu41223244">41223244 Liu41223244</a><br/><span>55. </span><a href="https://example.com/41223245hw-41223245">41223245 hw-41223245</a><br/><span>56. </span><a href="https://example.com/4122324641223246">41223246 41223246</a><br/><span>57. </span><a href="https://example.com/41223247CYC41223247">41223247 CYC41223247</a><br/><span>58. </span><a href="https://example.com/4122324841223248">41223248 41223248</a><br/><span>59. </span><a href="https://example.com/4122324941223249">41223249 41223249</a><br/><span>60. </span><a href="https://example.com/41223250timluo123">41223250 timluo123</a><br/><span>61. </span><a href="https://example.com/4122325141223251">41223251 41223251</a><br/><span>62. </span><a href="https://example.com/41223252supowen">41223252 supowen</a><br/><span>63. </span><a href="https://example.com/41223253">41223253</a><br/><span>64. </span><a href="https://example.com/41271217">41271217</a><br/><span>65. </span><a href="https://example.com/4127123641271236">41271236 41271236</a><br/><span>66. </span><a href="https://example.com/4127123741271237">41271237 41271237</a></p><br />About << <a href='About.html'>Previous</a> <a href='repo.html'>Next</a> >> repo</div>
         
     <!-- footer -->
       <div class="container">

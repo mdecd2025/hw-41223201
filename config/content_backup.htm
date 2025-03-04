@@ -1,5 +1,34 @@
 <h1>About</h1>
-<h3>repo</h3>
+<h2>list</h2>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from browser import html, document
+
+# 讀取學員資料的 URL
+url = "https://mde.tw/list/2b.txt"
+
+# 讀取資料並將每行資料存儲到數列中
+data = open(url).readlines()
+
+# 因為資料的第一行是標題，所以有效資料從索引 1 開始
+all_stud = data[1:]
+
+# 查詢有多少學員資料
+print("總共有 " + str(len(all_stud)) + "名學員")
+
+# 取得網頁中 ID 為 "brython_div1" 的位置，這樣可以將資料插入到該位置
+brython_div1 = document["brython_div1"]
+
+# 使用 for 迴圈遍歷所有學員資料，將每個學員的資料顯示為超鏈接
+for idx, student in enumerate(all_stud, start=1):
+    # 假設每行資料是學員的某個識別信息，例如學號或帳號，並且以學號為鏈接名稱
+    student_info = student.strip()  # 去除多餘的空格與換行符
+
+    # 顯示學員的資料作為超鏈接
+    brython_div1 &lt;= f"{idx}. " + html.A(student_info, href=f"https://example.com/{student_info}")
+
+    # 在每個超鏈接後插入換行符
+    brython_div1 &lt;= html.BR()
+</pre>
+<h2>repo</h2>
 <p>課程名稱: 協同產品設計實習 - Collaborative Product Design Practice</p>
 <p>學員作業網站: <a class="Link--inTextBlock" href="https://mdecd2025.github.io/hw-41223201/">https://mdecd2025.github.io/hw-41223201/</a></p>
 <p>學員作業倉儲:<a href="https://github.com/mdecd2025/hw-41223201">https://github.com/mdecd2025/hw-41223201</a></p>
@@ -31,8 +60,10 @@
 <p>以下為操作影片, 各學員可以採用上學期的 Python 3.10 或 C: 中的 Python 3.11 舊系統自製 Python 3.13.2 為主的新可攜程式環境.</p>
 <p>Python 3.13.2</p>
 <p>Putty 0.83</p>
-<p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" frameborder="0" height="315" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/kT6UBQQF9kM?si=zh4ANIzHs2XDL_Mm" title="YouTube video player" width="560"></iframe></p><h2>Tasks2</h2>
+<p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" frameborder="0" height="315" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/kT6UBQQF9kM?si=zh4ANIzHs2XDL_Mm" title="YouTube video player" width="560"></iframe></p>
+<h2>Tasks2</h2>
 <p><span>使用 SSH 協定執行作業倉儲的推送</span></p>
+<p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" frameborder="0" height="315" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/y7q5H5kLXfw?si=zIKohmtQpC7qeSZ8" title="YouTube video player" width="560"></iframe></p>
 <h2>Tasks3</h2>
 <p><span>使用 Solvespace 建立平面四連桿系統零組件(HW2)</span></p>
 <h2>Tasks4</h2>
